@@ -1,0 +1,46 @@
+#!/usr/bin/env gbs3
+'Fibonacci memoization in Gambas
+'Based in https://www.davidhayden.me/blog/recursive-fibonacci-and-memoization-in-csharp
+'Gambas Scripting Documentation http://gambaswiki.org/wiki/doc/scripting
+'Author: Virgilio De la Cruz Jardón
+'Date : Feb 2022
+
+' Gambas module file
+
+Public memo As Collection = ["0": 0, "1": 1]
+
+Public Function fibonaccinormal(n As Float) As Float 
+  If n = 0 Then
+    Return 0
+  Else If n = 1 Then
+    Return 1
+  Else 
+    Return fibonaccinormal(n - 1) + fibonaccinormal(n - 2)  
+  Endif 
+  
+  
+End
+
+
+Public Function fibonaccimemo(n As Float) As Float 
+    Dim nstring As String
+    Dim x As Float
+    nstring = CStr(n)
+  If memo.Exist(nstring) Then
+    Return memo[nstring]
+  Else
+      x = fibonacci(n - 1) + fibonacci(n - 2)
+      memo.Add(x, CStr(n))
+      Return x
+  Endif
+ 
+  
+End
+
+
+Public Sub Main()
+
+   Print fibonaccimemo(100)
+   
+  'Print fibonaccinormal(100) 
+ End
