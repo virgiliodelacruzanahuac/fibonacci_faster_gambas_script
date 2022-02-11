@@ -1,6 +1,7 @@
 #!/usr/bin/env gbs3
 'Fibonacci memoization in Gambas
 'Based in https://www.davidhayden.me/blog/recursive-fibonacci-and-memoization-in-csharp
+'Gambas collection docs http://gambaswiki.org/wiki/comp/gb/collection
 'Gambas Scripting Documentation http://gambaswiki.org/wiki/doc/scripting
 'Author: Virgilio De la Cruz Jardón
 'Date : Feb 2022
